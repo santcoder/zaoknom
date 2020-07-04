@@ -27,3 +27,6 @@ def getMessage():
 def webhook():
 	bot.remove_webhook()
 	bot.set_webhook(url=WEBHOOK_URL)
+
+if __name__ == "__main__":
+    server.run(host="telegrambot.sandbox.loc", port=int(os.environ.get('PORT', 80)))
