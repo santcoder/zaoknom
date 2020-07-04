@@ -10,7 +10,7 @@ bot =telebot.TeleBot(TOKEN)
 server = Flask(__name__)
 
 logger = telebot.logger
-telebot.logger.setLevel(logger.INFO)
+telebot.logger.setLevel(logging.INFO)
 
 
 @bot.message_handler(commands=['start'])
