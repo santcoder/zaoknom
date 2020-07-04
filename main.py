@@ -17,6 +17,10 @@ telebot.logger.setLevel(logging.INFO)
 def start(message):
 	bot.reply_to(message.chat.id, "Привет! Пришли мне фото!")
 
+@bot.message_handler(content_types=["photo"])
+def photo():
+	pass
+
 
 @server.route("/", methods=['POST'])
 def getMessage():
