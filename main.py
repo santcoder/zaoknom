@@ -47,7 +47,7 @@ def photo(message):
 	result = add_foreground(photo)
 	result_io = io.BytesIO()
 	result.save(result_io, "PNG")
-	result_io = "result.png"
+	result_io.name = "result.png"
 	result_io.seek(0)
 	bot.send_photo(chat_id, result_io)
 
