@@ -15,11 +15,15 @@ telebot.logger.setLevel(logging.INFO)
 
 @bot.message_handler(commands=['start'])
 def start(message):
-	bot.reply_to(message.chat.id, "Привет! Пришли мне фото!")
+	bot.send_message(message.chat.id, "Привет! Пришли мне фото!")
+
 
 @bot.message_handler(content_types=["photo"])
-def photo():
-	pass
+def photo(message):
+	chat_id = message.chat.id
+	file_id = message.photo[-1].file_id
+
+
 
 
 @server.route("/", methods=['POST'])
